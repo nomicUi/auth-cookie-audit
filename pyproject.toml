@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "auth-cookie-audit"
+version = "0.1.0"
+description = "Audit Set-Cookie headers for common security misconfigurations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Daemon"}]
+dependencies = ["requests>=2.31.0"]
+
+[project.scripts]
+auth-cookie-audit = "auth_cookie_audit.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

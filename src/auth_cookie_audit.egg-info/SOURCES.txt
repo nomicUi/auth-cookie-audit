@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/auth_cookie_audit/__init__.py
+src/auth_cookie_audit/audit.py
+src/auth_cookie_audit/cli.py
+src/auth_cookie_audit.egg-info/PKG-INFO
+src/auth_cookie_audit.egg-info/SOURCES.txt
+src/auth_cookie_audit.egg-info/dependency_links.txt
+src/auth_cookie_audit.egg-info/entry_points.txt
+src/auth_cookie_audit.egg-info/requires.txt
+src/auth_cookie_audit.egg-info/top_level.txt

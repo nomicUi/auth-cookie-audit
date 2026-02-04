@@ -1,0 +1,2 @@
+[console_scripts]
+auth-cookie-audit = auth_cookie_audit.cli:main

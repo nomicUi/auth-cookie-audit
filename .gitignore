@@ -1,0 +1,20 @@
+.env
+.env.*
+secrets.*
+*.key
+*.pem
+credentials.json
+config.local.*
+node_modules/
+dist/
+build/
+.cache/
+__pycache__/
+
+# Python
+.venv/
+*.pyc
+.pytest_cache/
+
+# OS
+.DS_Store

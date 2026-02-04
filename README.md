@@ -1,0 +1,56 @@
+# auth-cookie-audit
+
+Tiny CLI to audit **Set-Cookie** headers for common security footguns.
+
+This is defensive tooling: it helps you *verify* your app is setting cookies safely.
+
+## What it checks
+
+- Missing `HttpOnly`
+- Missing `Secure`
+- Weak `SameSite` (`None` without `Secure`, or missing)
+- Overly broad `Domain`
+- Overly broad `Path=/`
+- Session cookies with no expiry (optional warning)
+
+## Install
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -e .
+```
+
+## Usage
+
+Audit a raw header file:
+
+```bash
+auth-cookie-audit headers.txt
+```
+
+Audit a URL (makes a GET request and inspects `Set-Cookie`):
+
+```bash
+auth-cookie-audit https://example.com
+```
+
+You can also pipe headers:
+
+```bash
+curl -s -D - https://example.com -o /dev/null | auth-cookie-audit -
+```
+
+## Output
+
+- `OK` lines for cookies that look safe
+- `WARN` lines for suspicious flags
+
+## Notes
+
+- A cookie can be “correct” and still be a bad idea for your threat model.
+- If you don’t know what to do: default to `HttpOnly; Secure; SameSite=Lax` for session cookies.
+
+## License
+
+MIT
